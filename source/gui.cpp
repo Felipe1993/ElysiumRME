@@ -358,17 +358,12 @@ bool GUI::LoadDataFiles(wxString& error, wxArrayString& warnings)
 		return false;
 	}
 
-	g_gui.SetLoadDone(20, "Loading items.otb ...");
-	if(!g_items.loadFromOtb(wxString(data_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "items.otb"), error, warnings)) {
-		error = "Couldn't load items.otb: " + error;
+	g_gui.SetLoadDone(30, "Loading objects.xml ...");
+	if(!g_items.loadFromGameXml(wxString(data_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "objects.xml"), error, warnings)) {
+		error = "Couldn't load objects.xml: " + error;
 		g_gui.DestroyLoadBar();
 		UnloadVersion();
 		return false;
-	}
-
-	g_gui.SetLoadDone(30, "Loading items.xml ...");
-	if(!g_items.loadFromGameXml(wxString(data_path.GetPath(wxPATH_GET_VOLUME | wxPATH_GET_SEPARATOR) + "items.xml"), error, warnings)) {
-		warnings.push_back("Couldn't load items.xml: " + error);
 	}
 
 	g_gui.SetLoadDone(45, "Loading creatures.xml ...");

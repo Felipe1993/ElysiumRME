@@ -78,6 +78,7 @@ enum ItemTypes_t {
 	ITEM_TYPE_TELEPORT,
 	ITEM_TYPE_BED,
 	ITEM_TYPE_KEY,
+	ITEM_TYPE_RUNE,
 	ITEM_TYPE_LAST
 };
 
@@ -347,7 +348,6 @@ public:
 	ItemType& getItemType(int id);
 	ItemType& getItemIdByClientID(int spriteId);
 
-	bool loadFromOtb(const FileName& datafile, wxString& error, wxArrayString& warnings);
 	bool loadFromGameXml(const FileName& datafile, wxString& error, wxArrayString& warnings);
 	bool loadItemFromGameXml(pugi::xml_node itemNode, int id);
 	bool loadMetaItem(pugi::xml_node node);
@@ -361,11 +361,6 @@ public:
 	uint32_t MajorVersion;
 	uint32_t MinorVersion;
 	uint32_t BuildNumber;
-
-protected:
-	bool loadFromOtbVer1(BinaryNode* itemNode, wxString& error, wxArrayString& warnings);
-	bool loadFromOtbVer2(BinaryNode* itemNode, wxString& error, wxArrayString& warnings);
-	bool loadFromOtbVer3(BinaryNode* itemNode, wxString& error, wxArrayString& warnings);
 
 protected:
 	// Count of GameSprite types

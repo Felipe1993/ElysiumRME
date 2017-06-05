@@ -15,7 +15,7 @@
 		<otb client="7.40" version="1" id="1"/>
 		<otb client="7.50" version="1" id="1"/>
 		<otb client="7.55" version="1" id="2"/>
-		<otb client="7.60" version="1" id="3"/>
+		<otb client="7.60" version="3" id="3"/>
 		<otb client="7.70" version="1" id="3"/>
 		<otb client="7.80" version="1" id="4"/>
 		<otb client="7.90" version="1" id="5"/>
@@ -111,9 +111,9 @@
 		</client>
 
 		<client name="7.6" otb="7.60" visible="true" data_directory="760">
-			<otbm version="1"/>
+			<otbm version="3"/>
 			<extensions from="7.6" to="7.6"/>
-			<data format="7.55" dat="0x439D5A33" spr="0x439852BE"/>
+			<data format="10.10" dat="0x51E3F8C3" spr="0x51E3F8E9"/>
 		</client>
 
 		<client name="8.00" otb="8.00" visible="true" data_directory="800">
